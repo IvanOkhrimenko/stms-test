@@ -1,0 +1,24 @@
+<div
+  class="container"
+  *ngIf="patientsViewModel$ | async as patientsViewModel">
+  <div rtl>
+    <h1 class="main-heading">{{ 'stms.patients.title' | translate }}</h1>
+    <div class="actions">
+      <a
+        mat-raised-button
+        class="actions-main"
+        color="primary"
+        (click)="getPatients()">
+        {{ 'stms.patients.get-patients' | translate }}
+      </a>
+      <st-grid
+        *ngIf="!patientsViewModel.isLoading; else loader"
+        [colDefs]="colDefs"
+        [rowData]="patientsViewModel.patients"></st-grid>
+    </div>
+
+    <ng-template #loader>
+      <st-loader></st-loader>
+    </ng-template>
+  </div>
+</div>

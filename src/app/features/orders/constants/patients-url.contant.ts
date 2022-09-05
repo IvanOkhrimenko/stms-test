@@ -1,0 +1,1 @@
+export const ORDERS_LIST_URL = 'https://api.mocki.io/v2/79fb05cb';

@@ -1,0 +1,1 @@
+export const PATIENTS_LIST_URL = 'https://api.mocki.io/v2/51597ef3';

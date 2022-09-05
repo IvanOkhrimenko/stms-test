@@ -1,0 +1,38 @@
+<div class="container">
+  <div rtl>
+    <h1 class="main-heading">{{ 'stms.menu.favorite-list' | translate }}</h1>
+    <div
+      class="actions"
+      fxLayout="column"
+      fxLayoutGap="10px">
+      <div
+        fxLayout="row"
+        fxLayoutGap="10px">
+        <a
+          mat-raised-button
+          class="actions-main"
+          [routerLink]="['patients']"
+          routerLinkActive="mat-accent"
+          color="primary">
+          {{ 'stms.patients.title' | translate }}
+        </a>
+        <a
+          mat-raised-button
+          class="actions-main"
+          [routerLink]="['orders']"
+          routerLinkActive="mat-accent"
+          #rla="routerLinkActive"
+          color="primary">
+          {{ 'stms.orders.title' | translate }}
+        </a>
+      </div>
+      <st-big-input-search
+        fxLayoutGap="20px"
+        [placeholder]="'stms.search.placeholder.' + (activeList$ | async) | translate"
+        [label]="'stms.search.button' | translate"
+        [faIcon]="faSearchIcon"
+        (onSearchEvent)="onSearch($event)"></st-big-input-search>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

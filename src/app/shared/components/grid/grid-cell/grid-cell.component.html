@@ -1,0 +1,4 @@
+<p *ngIf="!colDef.cellRenderer">{{ value }} </p>
+<div *ngIf="colDef.cellRenderer">
+  <ng-template #dynamicComp></ng-template>
+</div>

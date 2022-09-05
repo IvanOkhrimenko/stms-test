@@ -1,0 +1,11 @@
+<div fxLayoutAlign="start">
+  <st-big-input
+    fxFlex="80%"
+    [placeholder]="placeholder"
+    (onInputChange)="onInputChange($event)"></st-big-input>
+  <st-big-input-action
+    [faIcon]="faIcon"
+    [label]="label"
+    fxFlex="20%"
+    (action)="onClick()"></st-big-input-action>
+</div>

@@ -1,0 +1,20 @@
+<mat-list>
+  <mat-list-item>
+    <h3
+      *ngFor="let col of colDefs"
+      [fxFlex]="col.width"
+      [fxLayoutAlign]="col.position">{{ col.titleKey | translate }} </h3>
+  </mat-list-item>
+
+  <ng-container *ngFor="let row of rowData">
+    <mat-list-item [ngClass]="routeAnimationsElements">
+      <ng-container *ngFor="let col of colDefs">
+        <st-grid-cell
+          [fxFlex]="col.width"
+          [fxLayoutAlign]="col.position"
+          [colDef]="col"
+          [row]="row"></st-grid-cell>
+      </ng-container>
+    </mat-list-item>
+  </ng-container>
+</mat-list>
